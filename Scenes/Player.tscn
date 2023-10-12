@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn3op0er3x4no"]
+
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_r82qf"]
+[ext_resource type="Texture2D" uid="uid://dtiox0uapjsqx" path="res://icon.svg" id="2_vx4ba"]
+
+[sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_xdl3n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hc02w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vx4ba")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vx4ba")
+}],
+"loop": true,
+"name": &"drive_forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vx4ba")
+}],
+"loop": true,
+"name": &"rotate_backward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vx4ba")
+}],
+"loop": true,
+"name": &"rotate_forward",
+"speed": 5.0
+}]
+
+[node name="Player" type="RigidBody2D"]
+script = ExtResource("1_r82qf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("ConcavePolygonShape2D_xdl3n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hc02w")
+animation = &"death"
