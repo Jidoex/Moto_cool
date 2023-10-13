@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddsic7rqdnnrs"]
 
-[node name="Terrain" type="RigidBody2D"]
+[node name="Terrain" type="StaticBody2D"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
