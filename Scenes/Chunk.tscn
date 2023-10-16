@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://ddsic7rqdnnrs"]
+[gd_scene load_steps=2 format=3 uid="uid://ddsic7rqdnnrs"]
 
-[node name="Terrain" type="StaticBody2D"]
+[ext_resource type="Script" path="res://Scenes/Chunk.gd" id="1_3jten"]
+
+[node name="Chunk" type="StaticBody2D"]
+script = ExtResource("1_3jten")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 

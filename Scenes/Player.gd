@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export_group("Movement")
 @export var speed: float = 10_000
 @export var angular_speed: float = 3
 @export var deceleration_factor: float = 10
@@ -14,7 +15,8 @@ func _physics_process(delta):
 	drive(delta)
 	flip(delta)
 	move_and_slide()
-	
+
+#region Movement
 func drive(delta):
 	var direction = Input.get_axis("move_backward","move_forward")
 	if direction:
@@ -26,3 +28,4 @@ func flip(delta):
 	var rotation_direction = Input.get_axis("rotate_anticlockwise","rotate_clockwise")
 	if rotation_direction:
 		rotate(rotation_direction * angular_speed * delta)
+#endregion
