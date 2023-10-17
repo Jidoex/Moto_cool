@@ -3,16 +3,17 @@
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_r82qf"]
 [ext_resource type="Texture2D" uid="uid://dtiox0uapjsqx" path="res://icon.svg" id="2_vx4ba"]
 
-[sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_xdl3n"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_brrnb"]
+radius = 63.0
+height = 130.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(625, 300)
 script = ExtResource("1_r82qf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("ConcavePolygonShape2D_xdl3n")
-metadata/_edit_group_ = true
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_vx4ba")
 metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_brrnb")
