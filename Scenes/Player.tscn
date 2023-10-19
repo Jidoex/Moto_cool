@@ -9,6 +9,7 @@ height = 130.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(625, 300)
+collision_layer = 7
 script = ExtResource("1_r82qf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

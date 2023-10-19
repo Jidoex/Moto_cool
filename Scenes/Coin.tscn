@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bns0eh6ax6230"]
+[gd_scene load_steps=5 format=3 uid="uid://bns0eh6ax6230"]
 
 [ext_resource type="Script" path="res://Scenes/Coin.gd" id="1_uhydy"]
 [ext_resource type="Texture2D" uid="uid://dtiox0uapjsqx" path="res://icon.svg" id="2_232ko"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4h7k"]
+radius = 73.6
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7kg1q"]
 animations = [{
@@ -24,10 +27,12 @@ animations = [{
 
 [node name="Coin" type="Area2D" groups=["Collectibles"]]
 scale = Vector2(0.3, 0.3)
+collision_layer = 3
+collision_mask = 7
 script = ExtResource("1_uhydy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 0.261799
+shape = SubResource("CircleShape2D_u4h7k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.752941, 0.764706, 0, 1)
